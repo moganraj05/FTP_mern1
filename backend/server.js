@@ -14,8 +14,11 @@ mongoose.set('strictQuery', true);
 
 //cors setup
 const cors = require('cors');
-app.use(cors());
 
+const corsOptions = {
+  origin: 'https://ftp-mern1.onrender.com', // Replace with your frontend URL
+};
+app.use(cors(corsOptions));
 
 // middleware
 app.use(express.json())
