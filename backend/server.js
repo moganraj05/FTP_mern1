@@ -12,6 +12,11 @@ const app = express()
 
 mongoose.set('strictQuery', true);
 
+//cors setup
+const cors = require('cors');
+app.use(cors());
+
+
 // middleware
 app.use(express.json())
 
