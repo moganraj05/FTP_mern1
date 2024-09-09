@@ -23,7 +23,7 @@ const WorkoutForm = () => {
 
     const workout = {title, load, reps, running}
 
-    const response = await fetch('/api/workouts', {
+    const response = await fetch('https://ftp-mern.onrender.com/api/workouts', {
       method: 'POST',
       body: JSON.stringify(workout),
       headers: {

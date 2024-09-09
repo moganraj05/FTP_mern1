@@ -22,7 +22,7 @@ const BmiForm = () => {
 
     const bmi = { name, height, weight };
 
-    const response = await fetch('/api/bmi', {
+    const response = await fetch('https://ftp-mern.onrender.com/api/bmi', {
       method: 'POST',
       body: JSON.stringify(bmi),
       headers: {

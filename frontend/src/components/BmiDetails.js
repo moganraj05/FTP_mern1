@@ -9,7 +9,7 @@ const BmiDetails = ({ bmi }) => {
   const {user} = useAuthContext()
 
   const handleClick = async () => {
-    const response = await fetch('/api/bmi/' + bmi._id, {
+    const response = await fetch('https://ftp-mern.onrender.com/api/bmi/' + bmi._id, {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${user.token}`

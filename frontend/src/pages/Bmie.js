@@ -11,7 +11,7 @@ const BmiPage = () => {
 
   useEffect(() => {
     const fetchBmis = async () => {
-      const response = await fetch('/api/bmi/',{headers: {'Authorization': `Bearer ${user.token}`},});
+      const response = await fetch('https://ftp-mern.onrender.com/api/bmi/',{headers: {'Authorization': `Bearer ${user.token}`},});
       const json = await response.json();
 
       if (response.ok) {
