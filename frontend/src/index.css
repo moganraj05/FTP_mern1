@@ -186,20 +186,38 @@ form.signup, form.login {
    color: #b10d0d;
 }
 
-.my-link1{
-  color: #ecf5fe;
-  font-size: 35px;          /* Makes the text bigger */
-    font-weight: bold;        /* Makes the text strong */
-    margin-right: 300px;       /* Adds space between the links */
-    text-decoration: none;    /* Removes underline from links */
-    
+
+
+
+/* newwww*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+.my-link2 {
+  font-family: 'Poppins', sans-serif;
+  color: #aae5d9; /* Bright Cyan */
+  text-decoration: none;
+  font-size: 21px;
+  font-weight: 600; /* Slightly bold */
+  padding: 5px 10px;
+  margin-left: 520px;       /* Makes the text strong */
+  margin-right: 80px;   
 }
-.my-link2{
-  color: #ecf5fe;
-  font-size: 35px;          /* Makes the text bigger */
-    font-weight: bold; 
-    margin-left: 560px;       /* Makes the text strong */
-    margin-right: 80px;       /* Adds space between the links */
-    text-decoration: none;    /* Removes underline from links */
-    
+
+.my-link2:hover {
+  color: #16A085; /* Darker shade of cyan on hover */
+  text-decoration: underline;
+}
+
+.my-link1 {
+  font-family: 'Poppins', sans-serif;
+  color: #aae5d9; /* Bright Cyan */
+  text-decoration: none;
+  font-size: 21px;
+  font-weight: 600; /* Slightly bold */
+  margin-right: 300px;   
+
+}
+
+.my-link1:hover {
+  color: #16A085; /* Darker shade of cyan on hover */
+  text-decoration: underline;
 }
