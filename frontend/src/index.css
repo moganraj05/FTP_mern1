@@ -6,14 +6,24 @@
   --primary: #34495E;
   --error: #e7195a;
 }
+
 body {
   background: #E8F6F3;
   margin: 0;
   font-family: "Poppins";
+  box-sizing: border-box;
 }
+
+/* Ensure all elements respect box-sizing */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
 header {
   background: #2C3E50;
 }
+
+/* Make header responsive using Flexbox */
 header .container {
   max-width: 1400px;
   margin: 0 auto;
@@ -21,23 +31,35 @@ header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap; /* Wraps elements when the window is too small */
 }
+
 header a {
   color: #333;
   text-decoration: none;
 }
-.pages{
+
+/* Pages container should be responsive */
+.pages {
   max-width: 1400px;
   padding: 20px;
   margin: 0 auto;
 }
 
-/* homepage */
+/* homepage grid becomes single column on small screens */
 .home {
   display: grid;
   grid-template-columns: 3fr 1fr;
   gap: 100px;
 }
+
+@media (max-width: 768px) {
+  .home {
+    grid-template-columns: 1fr;
+    gap: 20px; /* Adjust gap for smaller screens */
+  }
+}
+
 .workout-details {
   background: #e9fcff;
   border-radius: 4px;
@@ -46,16 +68,19 @@ header a {
   position: relative;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
 }
+
 .workout-details h4 {
   margin: 0 0 10px 0;
   font-size: 1.2em;
   color: var(--primary);
 }
+
 .workout-details p {
   margin: 0;
   font-size: 0.9em;
   color: #555;
 }
+
 .workout-details span {
   position: absolute;
   top: 20px;
@@ -67,11 +92,11 @@ header a {
   color: #333;
 }
 
-
-/* new workout form */
+/* Form elements should stretch full width */
 label, input {
   display: block;
 }
+
 input {
   padding: 10px;
   margin-top: 10px;
@@ -79,8 +104,8 @@ input {
   width: 100%;
   border: 1px solid #ddd;
   border-radius: 4px;
-  box-sizing: border-box;
 }
+
 form button {
   background: var(--primary);
   border: 0;
@@ -91,9 +116,8 @@ form button {
   cursor: pointer;
 }
 
-/* Add hover effect to button */
 form button:hover {
-  background: #517eab; /* Adjust this color as needed */
+  background: #517eab;
 }
 
 div.error {
@@ -109,43 +133,17 @@ input.error {
   border: 1px solid var(--error);
 }
 
-header a {
-  color: #333;
-  text-decoration: none;
-}
-
-.pages {
-  max-width: 1400px;
-  padding: 20px;
-  margin: 0 auto;
-}
-
-/* Add hover effect to delete icon */
-.workout-details span {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  cursor: pointer;
-  background: #f1f1f1;
-  padding: 6px;
-  border-radius: 90%;
-  color: #543f61;
-  transition: background-color 0.3s; /* Smooth transition effect */
-}
-
-/* Hover effect */
-.workout-details span:hover {
-  background: #dfd5e6; /* Adjust this color as needed */
-}
-
-/* navbar */
+/* Responsive navigation */
 nav {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
+
 nav a, nav button {
   margin-left: 10px;
 }
+
 nav button {
   background: #fff;
   color: var(--primary);
@@ -157,7 +155,7 @@ nav button {
   font-size: 1em;
 }
 
-/* auth forms */
+/* Responsive forms */
 form.signup, form.login {
   max-width: 400px;
   margin: 40px auto;
@@ -167,57 +165,62 @@ form.signup, form.login {
 }
 
 .my-link {
-  color: #ecf5fe; /* Link color */
- 
+  color: #ecf5fe;
 }
+
 .my-link:hover {
-  color: #acaeae; /* Change color on hover */
+  color: #acaeae;
 }
+
 .bmi-head {
   color: #ecf5fe;
-  margin-right: 400px;
 }
+
 .bmi-head:hover {
-  color: #acaeae; /* Change color on hover */
+  color: #acaeae;
 }
 
 .buttu:hover {
-   border: 2px solid #b10d0d;
-   color: #b10d0d;
+  border: 2px solid #b10d0d;
+  color: #b10d0d;
 }
 
-
-
-
-/* newwww*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+/* New link styles */
 .my-link2 {
   font-family: 'Poppins', sans-serif;
-  color: #aae5d9; /* Bright Cyan */
+  color: #aae5d9;
   text-decoration: none;
   font-size: 21px;
-  font-weight: 600; /* Slightly bold */
+  font-weight: 600;
+  margin-right: 80px; 
+  margin-left: 520px;  
   padding: 5px 10px;
-  margin-left: 520px;       /* Makes the text strong */
-  margin-right: 80px;   
 }
 
 .my-link2:hover {
-  color: #16A085; /* Darker shade of cyan on hover */
+  color: #16A085;
   text-decoration: underline;
 }
 
 .my-link1 {
   font-family: 'Poppins', sans-serif;
-  color: #aae5d9; /* Bright Cyan */
+  color: #aae5d9;
   text-decoration: none;
   font-size: 21px;
-  font-weight: 600; /* Slightly bold */
-  margin-right: 300px;   
-
+  font-weight: 600;
+  margin-right: 300px; 
 }
 
 .my-link1:hover {
-  color: #16A085; /* Darker shade of cyan on hover */
+  color: #16A085;
   text-decoration: underline;
 }
+
+/* Responsive media queries for small screens */
+@media (max-width: 768px) {
+  .my-link2, .my-link1 {
+    font-size: 18px;
+    margin: 0; /* Remove large margins on small screens */
+  }
+}
+
